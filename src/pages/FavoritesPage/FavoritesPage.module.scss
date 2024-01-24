@@ -1,0 +1,56 @@
+@import "../../assets/styles/variables.scss";
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 225px);
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.list-item {
+  position: relative;
+  overflow: hidden;
+
+  & a {
+    display: block;
+  }
+
+  & .btn-remove {
+    width: 100%;
+    margin-top: 10px;
+    background-color: $primary;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: $white;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    // display: flex;
+    // justify-content: center;
+  }
+  .list {
+    grid-template-columns: repeat(auto-fill, 168px);
+  }
+  .list-item {
+    & a {
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+
+      & ul {
+        & li {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

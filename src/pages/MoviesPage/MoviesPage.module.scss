@@ -1,0 +1,146 @@
+@import "../../assets/styles/variables.scss";
+
+.content {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+
+  & .info {
+    display: flex;
+    justify-content: center;
+  }
+
+  & .params {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $primary;
+    color: $white;
+    padding: 20px;
+    border-radius: 6px;
+
+    &-list {
+      margin: 0;
+      padding: 0;
+
+      & li {
+        list-style: none;
+        font-size: 18px;
+
+        &.alternative {
+          & ul {
+            margin: 10px;
+            padding: 0;
+            & li {
+              list-style: circle;
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+        }
+
+        & span {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    & .link-btn {
+      background-color: $white;
+
+      font-size: 18px;
+      text-align: center;
+      color: $primary;
+
+      padding: 5px 15px;
+      border-radius: 2px;
+      margin-top: 10px;
+
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+
+    & .btn-favorites {
+      background-color: transparent;
+      border: 1px solid $white;
+      cursor: pointer;
+
+      font-size: 18px;
+      text-align: center;
+      color: $white;
+
+      padding: 5px 15px;
+      border-radius: 2px;
+      margin-top: 10px;
+
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $gray;
+      }
+    }
+  }
+
+  & .synopsis {
+    background-color: $primary-light;
+    color: $white;
+    padding: 20px;
+
+    font-size: 18px;
+    border-radius: 6px;
+
+    & img {
+      display: block;
+      float: left;
+      border-radius: 6px;
+      margin: 0px 40px 10px 0px;
+    }
+  }
+}
+
+.recommends {
+  background-color: $primary;
+  border-radius: 6px;
+  color: $white;
+  padding: 40px;
+
+  & .recom-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    overflow-x: scroll;
+
+    gap: 20px;
+    -webkit-overflow-scrolling: touch;
+
+    & a {
+      width: 225px;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $primary;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $white;
+      border-radius: 12px;
+      border: 5px solid $primary;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $gray;
+    }
+  }
+}

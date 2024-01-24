@@ -1,0 +1,23 @@
+@import "../../../assets/styles/variables.scss";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & span {
+    display: block;
+    padding: 10px 20px;
+    background-color: $primary;
+    color: $white;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+}
