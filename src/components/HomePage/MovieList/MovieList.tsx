@@ -10,7 +10,8 @@ import { useAppSelector } from "../../../store";
 import Pagination from "../../blocks/Pagination/Pagination";
 
 const MovieList: FC<MovieListProps> = () => {
-  const [getAllMovies, { data, isLoading }] = useLazyGetAllMoviesQuery();
+  const [getAllMovies, { data, isLoading, isFetching }] =
+    useLazyGetAllMoviesQuery();
   const { page } = useAppSelector((state) => state.movieSlice);
 
   const getAllMoviesHandler = async () => {
@@ -29,7 +30,7 @@ const MovieList: FC<MovieListProps> = () => {
 
   return (
     <>
-      {isLoading ? (
+      {isLoading || isFetching ? (
         "Loading..."
       ) : (
         <div>
